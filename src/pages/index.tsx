@@ -1,8 +1,13 @@
 import styled from '@emotion/styled';
+import Layout from '../components/Layout';
 
 export default function Home() {
   return (
-    <Main>
+    <Layout
+      headerProps={{
+        clearMode: true,
+      }}
+    >
       <HeroSection>
         <ContentWrapper>
           <HeroCopy>
@@ -19,18 +24,12 @@ export default function Home() {
           <NotificationImage src="/assets/images/willread-notification-ios.png" />
         </ImageWrapper>
       </HeroSection>
-    </Main>
+    </Layout>
   );
 }
 
-const Main = styled.main`
-  position: relative;
-  width: 100%;
-  height: 100%;
-`;
-
 const HeroSection = styled.section`
-  background: linear-gradient(102.62deg, #6E57FF 18.85%, #A498F1 80.86%);
+  background: linear-gradient(102.62deg, #6e57ff 18.85%, #a498f1 80.86%);
   width: 100%;
   height: 100%;
   display: flex;
