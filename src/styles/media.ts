@@ -1,5 +1,3 @@
-import { css } from '@emotion/react';
-
 export type Breakpoints = 'small' | 'medium' | 'large' | 'huge';
 
 export const defaultBreakpoints: { [key in Breakpoints]: string } = {
@@ -18,33 +16,14 @@ function getSizeFromBreakpoint(breakpointValue: Breakpoints) {
 }
 
 function lessThan(breakpoint: Breakpoints) {
-  return (...args) => css`
-    @media (max-width: ${getSizeFromBreakpoint(breakpoint)}) {
-      ${css(...args)}
-    }
-  `;
+  return `@media (max-width: ${getSizeFromBreakpoint(breakpoint)})`;
 }
 
 function greaterThan(breakpoint: Breakpoints) {
-  return (...args) => css`
-    @media (min-width: ${getSizeFromBreakpoint(breakpoint)}) {
-      ${css(...args)}
-    }
-  `;
-}
-
-function between(firstBreakpoint: Breakpoints, secondBreakpoint: Breakpoints) {
-  return (...args) => css`
-    @media (min-width: ${getSizeFromBreakpoint(
-    firstBreakpoint,
-  )}) and (max-width: ${getSizeFromBreakpoint(secondBreakpoint)}) {
-      ${css(...args)}
-    }
-  `;
+  return `@media (min-width: ${getSizeFromBreakpoint(breakpoint)})`;
 }
 
 export default {
   lessThan,
   greaterThan,
-  between,
 };
