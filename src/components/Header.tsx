@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import containerStyle from '../styles/containerStyle';
+import media from '../styles/media';
 
 export interface HeaderProps {
   clearMode?: boolean;
@@ -62,6 +63,13 @@ const HeaderBlock = styled.header<{ clearMode: boolean }>`
     : css`
           background-color: #ffffff;
         `)}
+
+  ${media.lessThan('medium')}{
+    height: 72px;
+    ${(props) => props.clearMode && css`
+      margin: 0 0 -72px 0;
+    `}
+  }
 `;
 
 const Container = styled.nav`
