@@ -91,11 +91,15 @@ const SubCopy = styled.h3`
 `;
 
 const ImageWrapper = styled.div`
-  margin: 48px 0 0 0;
+  margin: 48px 64px 0 0;
   position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  ${media.lessThan('large')} {
+    margin: 48px 0 0 0;
+  }
 `;
 
 const NotificationImage = styled.img`
@@ -103,10 +107,10 @@ const NotificationImage = styled.img`
   top: 120px;
   left: 157px;
   width: 400px;
-  display: none;
+  display: block;
 
-  ${media.greaterThan('large')} {
-    display: block;
+  ${media.lessThan('large')} {
+    display: none;
   }
 `;
 
@@ -116,10 +120,10 @@ const NotificationImageMobile = styled.img`
   left: auto;
   width: 400px;
   max-width: 100%;
-  display: block;
+  display: none;
 
-  ${media.greaterThan('large')} {
-    display: none;
+  ${media.lessThan('large')} {
+    display: block;
   }
 `;
 
