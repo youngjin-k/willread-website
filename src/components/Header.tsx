@@ -64,7 +64,7 @@ const HeaderBlock = styled.header<{ clearMode: boolean }>`
           background-color: #ffffff;
         `)}
 
-  ${media.lessThan('medium')}{
+  ${media.lessThan('large')}{
     height: 72px;
     ${(props) => props.clearMode && css`
       margin: 0 0 -72px 0;
@@ -112,6 +112,10 @@ const BlogLink = styled.a<{ clearMode: boolean; isActive: boolean }>`
 
   &:hover {
     background-color: rgba(110, 87, 255, 0.1);
+  }
+
+  ${media.lessThan('large')}{
+    padding: 0 16px;
   }
 `;
 
