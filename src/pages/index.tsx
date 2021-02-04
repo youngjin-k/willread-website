@@ -10,28 +10,40 @@ export default function Home() {
         clearMode: true,
       }}
     >
-      <HeroSection>
-        <Conatiner>
-          <ContentWrapper>
-            <HeroCopy>
-              글을 읽는
-              <br />
-              가장 가벼운 습관,
-              <br />
-              윌리드
-            </HeroCopy>
-            <SubCopy>곧 만나요.</SubCopy>
-          </ContentWrapper>
-          <ImageWrapper>
-            <NotificationImage src="/assets/images/willread-notification-ios.png" />
-            <NotificationImageMobile src="/assets/images/willread-notification-ios-mobile.png" />
-            <IphoneImage src="/assets/images/willread-home-iphone.png" />
-          </ImageWrapper>
-        </Conatiner>
-      </HeroSection>
+      <HomeBlock>
+        <HeroSection>
+          <Conatiner>
+            <ContentWrapper>
+              <HeroCopy>
+                글을 읽는
+                <br />
+                가장 가벼운 습관,
+                <br />
+                윌리드
+              </HeroCopy>
+              <SubCopy>곧 만나요.</SubCopy>
+            </ContentWrapper>
+            <ImageWrapper>
+              <NotificationImage src="/assets/images/willread-notification-ios.png" />
+              <NotificationImageMobile src="/assets/images/willread-notification-ios-mobile.png" />
+              <IphoneImage src="/assets/images/willread-home-iphone.png" />
+            </ImageWrapper>
+          </Conatiner>
+        </HeroSection>
+      </HomeBlock>
     </Layout>
   );
 }
+
+const HomeBlock = styled.main`
+  position: relative;
+  height: 100%;
+  min-height: 800px;
+
+  ${media.lessThan('large')} {
+    height: auto;
+  }
+`;
 
 const HeroSection = styled.section`
   background: linear-gradient(102.62deg, #6e57ff 18.85%, #a498f1 80.86%);
@@ -44,7 +56,6 @@ const HeroSection = styled.section`
 
   ${media.lessThan('large')} {
     background: linear-gradient(166.88deg, #6e57ff 6.1%, #a498f1 99.33%);
-    height: auto;
   }
 `;
 
