@@ -2,16 +2,16 @@ import styled from '@emotion/styled';
 import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import Layout from '../../components/Layout';
+import PostCard from '../../components/PostCard';
 import { getAllPostsFrontMatter, PostFrontMatter } from '../../lib/mdx';
 import containerStyle from '../../styles/containerStyle';
 import media from '../../styles/media';
 
-export interface PostListProps {
+export interface PostListPageProps {
   posts: PostFrontMatter[];
 }
 
-function PostList({ posts }: PostListProps) {
-  console.log(posts);
+function PostListPage({ posts }: PostListPageProps) {
   return (
     <Layout>
       <BlogBlock>
@@ -30,12 +30,25 @@ function PostList({ posts }: PostListProps) {
             </HeaderImageWrapper>
           </HeaderContentContainer>
         </Header>
+
+        <PostList>
+          {posts.map((frontMatter) => (
+            <PostCard
+              key={frontMatter.slug}
+              frontMatter={frontMatter}
+            />
+          ))}
+        </PostList>
       </BlogBlock>
     </Layout>
   );
 }
 
-const BlogBlock = styled.main``;
+const BlogBlock = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const Header = styled.header`
   position: relative;
@@ -85,7 +98,7 @@ const Title = styled.h1`
   }
 `;
 
-const SubTitle = styled.h2`
+const SubTitle = styled.h3`
   font-size: 18px;
   color: #81808b;
   font-weight: normal;
@@ -114,7 +127,12 @@ const HeaderImageWrapper = styled.div`
   }
 `;
 
-export const getStaticProps: GetStaticProps<PostListProps> = async () => {
+const PostList = styled.section`
+  ${containerStyle};
+  padding: 20px 16px;
+`;
+
+export const getStaticProps: GetStaticProps<PostListPageProps> = async () => {
   const posts = getAllPostsFrontMatter();
 
   return {
@@ -124,4 +142,4 @@ export const getStaticProps: GetStaticProps<PostListProps> = async () => {
   };
 };
 
-export default PostList;
+export default PostListPage;
