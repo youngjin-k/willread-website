@@ -39,7 +39,7 @@ function Header({ clearMode }: HeaderProps) {
             clearMode={clearMode}
             isActive={isActiveBlog}
           >
-            blog
+            Blog
           </BlogLink>
         </NextLink>
       </Container>
