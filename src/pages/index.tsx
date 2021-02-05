@@ -24,9 +24,18 @@ export default function Home() {
               <SubCopy>곧 만나요.</SubCopy>
             </ContentWrapper>
             <ImageWrapper>
-              <NotificationImage src="/assets/images/willread-notification-ios.png" />
-              <NotificationImageMobile src="/assets/images/willread-notification-ios-mobile.png" />
-              <IphoneImage src="/assets/images/willread-home-iphone.png" />
+              <NotificationImage
+                src="/assets/images/willread-notification-ios.png"
+                alt="알림 이미지"
+              />
+              <NotificationImageMobile
+                src="/assets/images/willread-notification-ios-mobile.png"
+                alt="알림 이미지"
+              />
+              <IphoneImage
+                src="/assets/images/willread-home-iphone.png"
+                alt="윌리드 실행화면"
+              />
             </ImageWrapper>
           </Conatiner>
         </HeroSection>
@@ -91,10 +100,11 @@ const HeroCopy = styled.h1`
   }
 `;
 
-const SubCopy = styled.h3`
+const SubCopy = styled.p`
   font-size: 32px;
   color: rgb(221, 217, 243);
   margin: 32px 0 0 0;
+  font-weight: bold;
 
   ${media.lessThan('large')} {
     display: none;
