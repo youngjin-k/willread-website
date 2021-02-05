@@ -3,6 +3,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
+import { NextSeo } from 'next-seo';
 import Layout from '../../components/Layout';
 import { getFiles, getPostBySlug, Post } from '../../lib/mdx';
 import media from '../../styles/media';
@@ -14,6 +15,19 @@ export interface PostPageProps {
 function PostPage({ post }: PostPageProps) {
   return (
     <Layout>
+      <NextSeo
+        title={`${post.frontMatter.slug} - willread`}
+        description={post.frontMatter.excerpt}
+        openGraph={{
+          images: [
+            {
+              url: post.frontMatter.image,
+            },
+          ],
+          title: `${post.frontMatter.slug} - willread`,
+          description: post.frontMatter.excerpt,
+        }}
+      />
       <BlogBlock>
         <Container>
           <Header>

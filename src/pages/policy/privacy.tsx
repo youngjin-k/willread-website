@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
+import { NextSeo } from 'next-seo';
 import Layout from '../../components/Layout';
 import containerStyle from '../../styles/containerStyle';
 
 function privacy() {
   return (
     <Layout>
+      <NextSeo title="개인정보 처리방침 - willread" />
       <PrivacyBlock>
         <Container>
           <h1>개인정보 처리방침</h1>

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { GetStaticProps } from 'next';
-import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import Layout from '../../components/Layout';
 import PostCard from '../../components/PostCard';
@@ -15,9 +15,10 @@ export interface PostListPageProps {
 function PostListPage({ posts }: PostListPageProps) {
   return (
     <Layout>
-      <Head>
-        <title>blog - willread</title>
-      </Head>
+      <NextSeo
+        title="blog - willread"
+        description="새로운 소식을 전해드려요."
+      />
       <BlogBlock>
         <Header>
           <HeaderContentContainer>
