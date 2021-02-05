@@ -104,7 +104,7 @@ const Title = styled.h1`
   }
 `;
 
-const SubTitle = styled.h3`
+const SubTitle = styled.p`
   font-size: 18px;
   color: #81808b;
   font-weight: normal;
