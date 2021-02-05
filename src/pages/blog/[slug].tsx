@@ -40,6 +40,7 @@ function PostPage({ post }: PostPageProps) {
                 src={post.frontMatter.image}
                 layout="fill"
                 objectFit="cover"
+                alt={post.frontMatter.title}
               />
             </ThumbnailWrapper>
           </ThumbnailContainer>
@@ -89,6 +90,7 @@ const Title = styled.h1`
   font-size: 46px;
   line-height: 56px;
   margin: 0 0 12px 0;
+  color: #121214;
 
   ${media.lessThan('medium')} {
     font-size: 32px;
@@ -98,7 +100,7 @@ const Title = styled.h1`
 
 const PublishedAt = styled.p`
   font-size: 14px;
-  color: #81808b;
+  color: #121214;
 `;
 
 export const getStaticPaths: GetStaticPaths = async () => {

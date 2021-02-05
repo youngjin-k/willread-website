@@ -20,6 +20,7 @@ function PostCard({ frontMatter }: PostCardProps) {
                   src={frontMatter.image}
                   layout="fill"
                   objectFit="cover"
+                  alt={frontMatter.title}
                 />
               </ThumbnailWrapper>
             </ThumbnailContainer>

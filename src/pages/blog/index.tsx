@@ -31,6 +31,7 @@ function PostListPage({ posts }: PostListPageProps) {
                 src="/assets/images/blog-header-willread-bird.png"
                 layout="fill"
                 loading="eager"
+                alt="새로운 소식을 전해드려요"
               />
             </HeaderImageWrapper>
           </HeaderContentContainer>
