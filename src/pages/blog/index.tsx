@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../../components/Layout';
 import PostCard from '../../components/PostCard';
@@ -14,6 +15,9 @@ export interface PostListPageProps {
 function PostListPage({ posts }: PostListPageProps) {
   return (
     <Layout>
+      <Head>
+        <title>blog - willread</title>
+      </Head>
       <BlogBlock>
         <Header>
           <HeaderContentContainer>

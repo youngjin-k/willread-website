@@ -2,8 +2,11 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Global } from '@emotion/react';
 import baseCSS from '../styles/baseCSS';
+import useAnalytics from '../lib/useAnalytics';
 
 function App({ Component, pageProps }: AppProps) {
+  useAnalytics();
+
   return (
     <>
       <Head>
