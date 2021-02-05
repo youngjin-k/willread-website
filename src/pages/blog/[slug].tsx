@@ -4,6 +4,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
 import { NextSeo } from 'next-seo';
+import NextLink from 'next/link';
 import Layout from '../../components/Layout';
 import { getFiles, getPostBySlug, Post } from '../../lib/mdx';
 import media from '../../styles/media';
@@ -48,6 +49,14 @@ function PostPage({ post }: PostPageProps) {
             className="markdown-body"
             source={post.content}
           />
+          <Footer>
+            <NextLink
+              href="/blog"
+              passHref
+            >
+              <BackLink>목록으로</BackLink>
+            </NextLink>
+          </Footer>
         </Container>
       </BlogBlock>
     </Layout>
@@ -101,6 +110,32 @@ const Title = styled.h1`
 const PublishedAt = styled.p`
   font-size: 14px;
   color: #121214;
+`;
+
+const Footer = styled.footer`
+  margin: 40px 0 0 0;
+`;
+
+const BackLink = styled.a`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 24px;
+  height: 48px;
+  transition: background-color 0.3s;
+  border-radius: 8px;
+  font-size: 18px;
+
+  color: #543de8;
+
+  &:hover {
+    background-color: rgba(110, 87, 255, 0.1);
+  }
+
+  ${media.lessThan('large')}{
+    padding: 0 16px;
+  }
 `;
 
 export const getStaticPaths: GetStaticPaths = async () => {
