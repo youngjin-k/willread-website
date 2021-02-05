@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import containerStyle from '../styles/containerStyle';
 import media from '../styles/media';
 
@@ -24,9 +25,12 @@ function Header({ clearMode }: HeaderProps) {
           passHref
         >
           <LogoLink>
-            <LogoImage
+            <Image
               src={logoUrl}
               alt="willread"
+              width={140}
+              height={29}
+              loading="eager"
             />
           </LogoLink>
         </NextLink>
@@ -83,10 +87,6 @@ const LogoLink = styled.a`
   display: block;
   padding: 0;
   margin: 0;
-`;
-
-const LogoImage = styled.img`
-  width: 140px;
 `;
 
 const BlogLink = styled.a<{ clearMode: boolean; isActive: boolean }>`

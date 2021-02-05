@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 import Layout from '../components/Layout';
 import containerStyle from '../styles/containerStyle';
 import media from '../styles/media';
@@ -24,18 +25,33 @@ export default function Home() {
               <SubCopy>곧 만나요.</SubCopy>
             </ContentWrapper>
             <ImageWrapper>
-              <NotificationImage
-                src="/assets/images/willread-notification-ios.png"
-                alt="알림 이미지"
-              />
-              <NotificationImageMobile
-                src="/assets/images/willread-notification-ios-mobile.png"
-                alt="알림 이미지"
-              />
-              <IphoneImage
-                src="/assets/images/willread-home-iphone.png"
-                alt="윌리드 실행화면"
-              />
+              <NotificationImageMobileWrapper>
+                <Image
+                  src="/assets/images/willread-notification-ios-mobile.png"
+                  alt="알림 이미지"
+                  width={400}
+                  height={105}
+                  loading="eager"
+                />
+              </NotificationImageMobileWrapper>
+              <IphoneImageWrapper>
+                <Image
+                  src="/assets/images/willread-home-iphone.png"
+                  alt="윌리드 실행화면"
+                  width={344}
+                  height={641}
+                  loading="eager"
+                />
+              </IphoneImageWrapper>
+              <NotificationImageWrapper>
+                <Image
+                  src="/assets/images/willread-notification-ios.png"
+                  alt="알림 이미지"
+                  width={400}
+                  height={148}
+                  loading="eager"
+                />
+              </NotificationImageWrapper>
             </ImageWrapper>
           </Conatiner>
         </HeroSection>
@@ -117,39 +133,40 @@ const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  max-width: 100%;
 
   ${media.lessThan('large')} {
     margin: 48px 0 0 0;
   }
 `;
 
-const NotificationImage = styled.img`
+const NotificationImageWrapper = styled.div`
   position: absolute;
   top: 120px;
   left: 157px;
   width: 400px;
-  display: block;
+  height: 148px;
 
   ${media.lessThan('large')} {
     display: none;
   }
 `;
 
-const NotificationImageMobile = styled.img`
+const NotificationImageMobileWrapper = styled.div`
   position: relative;
   top: auto;
   left: auto;
   width: 400px;
   max-width: 100%;
   display: none;
+  overflow: hidden;
 
   ${media.lessThan('large')} {
     display: block;
   }
 `;
 
-const IphoneImage = styled.img`
-  display: block;
+const IphoneImageWrapper = styled.div`
   width: 344px;
   max-width: 100%;
 
