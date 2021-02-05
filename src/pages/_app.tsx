@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { Global } from '@emotion/react';
 import baseCSS from '../styles/baseCSS';
 import useAnalytics from '../lib/useAnalytics';
+import DefaultSEO from '../components/DefaultSEO';
 
 function App({ Component, pageProps }: AppProps) {
   useAnalytics();
@@ -10,7 +11,6 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>willread</title>
         <meta charSet="utf-8" />
         <meta
           name="viewport"
@@ -37,6 +37,7 @@ function App({ Component, pageProps }: AppProps) {
           content="40260a8feea706a1e774fe336c3e479cfeeee363"
         />
       </Head>
+      <DefaultSEO />
       <Global styles={[baseCSS]} />
       <Component {...pageProps} />
     </>
