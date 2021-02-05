@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import markdown from './markdown';
 import normalize from './normalize';
 
 const baseCSS = css`
@@ -24,6 +25,7 @@ const baseCSS = css`
   }
 
   ${normalize};
+  ${markdown};
 `;
 
 export default baseCSS;

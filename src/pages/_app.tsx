@@ -2,12 +2,15 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Global } from '@emotion/react';
 import baseCSS from '../styles/baseCSS';
+import useAnalytics from '../lib/useAnalytics';
+import DefaultSEO from '../components/DefaultSEO';
 
 function App({ Component, pageProps }: AppProps) {
+  useAnalytics();
+
   return (
     <>
       <Head>
-        <title>willread</title>
         <meta charSet="utf-8" />
         <meta
           name="viewport"
@@ -25,7 +28,16 @@ function App({ Component, pageProps }: AppProps) {
           sizes="32x32"
           href="/assets/favicons/favicon-32x32.png"
         />
+        <meta
+          name="google-site-verification"
+          content="XL757NXEvvQUA0AAHp68OsXqc64VEDqBog_jpe-e0bs"
+        />
+        <meta
+          name="naver-site-verification"
+          content="40260a8feea706a1e774fe336c3e479cfeeee363"
+        />
       </Head>
+      <DefaultSEO />
       <Global styles={[baseCSS]} />
       <Component {...pageProps} />
     </>
