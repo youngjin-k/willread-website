@@ -3,8 +3,6 @@ import markdown from './markdown';
 import normalize from './normalize';
 
 const baseCSS = css`
-  /* @import url("https://fonts.googleapis.com/earlyaccess/notosanskr.css?display=swap"); */
-
   @font-face {
     font-family: "Noto Sans KR";
     font-style: normal;
