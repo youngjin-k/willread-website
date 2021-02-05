@@ -28,6 +28,14 @@ function App({ Component, pageProps }: AppProps) {
           sizes="32x32"
           href="/assets/favicons/favicon-32x32.png"
         />
+        <meta
+          name="google-site-verification"
+          content="XL757NXEvvQUA0AAHp68OsXqc64VEDqBog_jpe-e0bs"
+        />
+        <meta
+          name="naver-site-verification"
+          content="40260a8feea706a1e774fe336c3e479cfeeee363"
+        />
       </Head>
       <Global styles={[baseCSS]} />
       <Component {...pageProps} />
