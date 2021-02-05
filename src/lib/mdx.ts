@@ -1,6 +1,7 @@
 import matter from 'gray-matter';
 import fs from 'fs';
 import path from 'path';
+import removeMd from 'remove-markdown';
 
 export interface PostFrontMatter {
   slug: string;
@@ -20,6 +21,8 @@ const root = process.cwd();
 
 const getFormattedDate = (date: string) => new Date(date).toISOString().slice(0, 10);
 
+const getPlainText = (markdown: string) => removeMd(markdown).replace(/(\r\n|\n|\r)/gm, '');
+
 export function getAllPostsFrontMatter() {
   const files = fs.readdirSync(path.join(root, 'posts'));
 
@@ -27,7 +30,7 @@ export function getAllPostsFrontMatter() {
     const source = fs.readFileSync(path.join(root, 'posts', postSlug), 'utf8');
     const { data, content } = matter(source);
 
-    const excerpt = content.slice(0, 200);
+    const excerpt = getPlainText(content.slice(0, 200));
 
     return {
       ...data,
@@ -50,7 +53,7 @@ export function getPostBySlug(slug: string) {
 
   const { data, content } = matter(source);
 
-  const excerpt = content.slice(0, 200);
+  const excerpt = getPlainText(content.slice(0, 200));
 
   return {
     frontMatter: {
