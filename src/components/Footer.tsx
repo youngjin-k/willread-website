@@ -12,7 +12,7 @@ function Footer() {
           <PrivacyLink>개인정보 처리방침</PrivacyLink>
         </NextLink>
         <Copyright>
-          Copyright 2021. willread team. All rights reserved.
+          © 2021. willread team. All rights reserved.
         </Copyright>
       </Container>
     </FooterBlock>
@@ -49,6 +49,7 @@ const Copyright = styled.p`
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   margin: 24px 0 0 0;
   padding: 12px 20px 0 20px;
+  text-align: center;
 `;
 
 export default Footer;
