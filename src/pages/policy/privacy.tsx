@@ -99,15 +99,18 @@ const Container = styled.div`
   }
 
   h2 {
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: normal;
   }
 
   h3 {
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: normal;
   }
 
   p {
     font-size: 14px;
+    font-weight: normal;
   }
 `;
 
