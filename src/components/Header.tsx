@@ -15,7 +15,7 @@ function Header({ clearMode }: HeaderProps) {
   const logoUrl = clearMode
     ? '/assets/logo/logo-white.png'
     : '/assets/logo/logo.png';
-  const isActiveBlog = router.asPath === '/blog';
+  const isActiveBlog = router.asPath.startsWith('/blog');
 
   return (
     <HeaderBlock clearMode={clearMode}>
