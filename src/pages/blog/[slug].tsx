@@ -17,7 +17,7 @@ function PostPage({ post }: PostPageProps) {
   return (
     <Layout>
       <NextSeo
-        title={`${post.frontMatter.slug} - willread`}
+        title={`${post.frontMatter.title} - willread`}
         description={post.frontMatter.excerpt}
         openGraph={{
           images: [
@@ -25,7 +25,7 @@ function PostPage({ post }: PostPageProps) {
               url: post.frontMatter.image,
             },
           ],
-          title: `${post.frontMatter.slug} - willread`,
+          title: `${post.frontMatter.title} - willread`,
           description: post.frontMatter.excerpt,
         }}
       />
