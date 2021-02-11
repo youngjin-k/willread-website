@@ -671,7 +671,7 @@ const markdown = css`
   .markdown-body h4,
   .markdown-body h5,
   .markdown-body h6 {
-    margin-top: 24px;
+    margin-top: 40px;
     margin-bottom: 16px;
     font-weight: 600;
     line-height: 1.25;
