@@ -12,16 +12,19 @@ image: /assets/posts/how-to-save-to-willread/ios-share.png
 
 ### 1-1. 저장하고 싶은 아티클에서 공유하기를 통해 윌리드를 선택해주세요.
 
+[iOS]
 ![iOS 등록 방법](/assets/posts/how-to-save-to-willread/ios-share.png)
+
+[Android]
 ![Android 등록 방법](/assets/posts/how-to-save-to-willread/android-share.png)
 
-| 윌리드가 없다구요? `더보기`를 누르면 찾으실 수 있을 거에요. 자주 사용할수록 앞 쪽으로 나올테니 점점 더 쉽고 편하게 등록 할 수 있겠죠?
+> 윌리드가 보이지 않으신다면 `더보기`를 눌러보세요.
 
 ### 1-2. 윌리드가 켜지면서 링크가 입력된 상태가 될거에요! 확인을 누르면 등록 완료!🎉
 
 ![등록 완료](/assets/posts/how-to-save-to-willread/ios-share.png)
 
-| 완료 화면에서 [알림 설정] 버튼을 누르면 읽고 싶은 시간에 알림을 받을 수 있어요.
+> 완료 화면에서 [알림 설정] 버튼을 누르면 읽고 싶은 시간에 알림을 받을 수 있어요.
 
 ## 2. URL 복사해서 붙여넣기
 
