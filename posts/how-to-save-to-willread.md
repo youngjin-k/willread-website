@@ -36,7 +36,7 @@ image: /assets/posts/how-to-save-to-willread/main.png
 
 ### 2. 윌리드를 키면 클립보드에 복사된 URL카드를 확인 할 수 있어요. 카드를 탭하고 확인을 누르면 등록 완료!🎉
 
-![클립보드2](/assets/posts/how-to-save-to-willread/clipboard1.png)
+![클립보드2](/assets/posts/how-to-save-to-willread/clipboard2.png)
 
 ## 이런 경우엔?
 
