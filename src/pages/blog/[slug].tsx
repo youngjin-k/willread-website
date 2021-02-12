@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
 import { NextSeo } from 'next-seo';
 import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
 import { getFiles, getPostBySlug, Post } from '../../lib/mdx';
 import media from '../../styles/media';
@@ -14,6 +15,9 @@ export interface PostPageProps {
 }
 
 function PostPage({ post }: PostPageProps) {
+  const router = useRouter();
+  const { webview } = router.query;
+
   return (
     <Layout>
       <NextSeo
@@ -49,6 +53,7 @@ function PostPage({ post }: PostPageProps) {
             className="markdown-body"
             source={post.content}
           />
+          {!webview && (
           <Footer>
             <NextLink
               href="/blog"
@@ -57,6 +62,7 @@ function PostPage({ post }: PostPageProps) {
               <BackLink>목록으로</BackLink>
             </NextLink>
           </Footer>
+          )}
         </Container>
       </BlogBlock>
     </Layout>

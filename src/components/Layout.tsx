@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 import Footer from './Footer';
 import Header, { HeaderProps } from './Header';
@@ -7,10 +8,14 @@ export interface LayoutProps {
   headerProps?: HeaderProps;
 }
 
-function Layout({
-  children,
-  headerProps,
-}: LayoutProps) {
+function Layout({ children, headerProps }: LayoutProps) {
+  const router = useRouter();
+  const { webview } = router.query;
+
+  if (webview) {
+    return <>{children}</>;
+  }
+
   return (
     <>
       <Header {...headerProps} />
