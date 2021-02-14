@@ -1,8 +1,9 @@
 ---
-title: 새 아티클은 어떻게 등록하나요? [통합]
+title: 새 아티클은 어떻게 등록하나요?
 tag: 윌리드 사용법
 date: 2021-02-12T21:00:00.000Z
 image: /assets/posts/how-to-save-to-willread/main.png
+platform: android
 ---
 
 안녕하세요, 윌리드팀 디자이너 종규입니다.

@@ -1,8 +1,9 @@
 ---
-title: 새 아티클은 어떻게 등록하나요? [아이폰]
+title: 새 아티클은 어떻게 등록하나요?
 tag: 윌리드 사용법
 date: 2021-02-12T21:00:00.000Z
 image: /assets/posts/how-to-save-to-willread-on-iphone/main.png
+platform: ios
 ---
 
 안녕하세요, 윌리드팀 디자이너 종규입니다.
@@ -16,7 +17,7 @@ image: /assets/posts/how-to-save-to-willread-on-iphone/main.png
 
 > 윌리드가 보이지 않으신다면 `더보기`를 눌러보세요.
 
-### 1-2. 윌리드가 켜지면서 링크가 입력된 상태가 될거에요! 등록 버튼을 누르면 등록 완료!🎉
+### 1-2. 윌리드가 실행되면서 링크가 입력된 상태가 될거에요! 등록 버튼을 누르면 등록 완료!🎉
 
 ![등록 완료](/assets/posts/how-to-save-to-willread-on-iphone/save.png)
 

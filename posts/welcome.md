@@ -3,6 +3,7 @@ title: 윌리드에 오신걸 환영해요.
 tag: 윌리드 소개
 date: 2021-02-12T20:00:00.000Z
 image: /assets/posts/welcome/main.png
+platform:
 ---
 
 안녕하세요! 윌리드 개발자 영진이에요. 처음으로 인사드려서 정말 반가워요 👋
