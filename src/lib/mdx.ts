@@ -10,6 +10,7 @@ export interface PostFrontMatter {
   date: string;
   image: string;
   excerpt: string;
+  platform: null | string;
 }
 
 export interface Post {
@@ -41,8 +42,22 @@ export function getAllPostsFrontMatter() {
   }) as PostFrontMatter[];
 }
 
-export function getFiles() {
-  return fs.readdirSync(path.join(root, 'posts'));
+export function getFiles(platform?: 'ios' | 'android') {
+  const files = fs.readdirSync(path.join(root, 'posts'));
+
+  if (!platform) {
+    return files;
+  }
+
+  return files.filter((file) => {
+    const source = fs.readFileSync(
+      path.join(root, 'posts', file),
+      'utf8',
+    );
+
+    const { data } = matter(source);
+    return data.platform === null || data.platform.includes(platform);
+  });
 }
 
 export function getPostBySlug(slug: string) {

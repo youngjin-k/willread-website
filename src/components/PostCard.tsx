@@ -6,13 +6,16 @@ import media from '../styles/media';
 
 export interface PostCardProps {
   frontMatter: PostFrontMatter;
+  link?: string;
 }
 
-function PostCard({ frontMatter }: PostCardProps) {
+function PostCard({ frontMatter, link }: PostCardProps) {
+  const postLink = link || `blog/${frontMatter.slug}`;
+
   return (
     <PostCardBlock>
-      <NextLink href={`blog/${frontMatter.slug}`}>
-        <Link href={`blog/${frontMatter.slug}`}>
+      <NextLink href={postLink}>
+        <Link href={postLink}>
           <Container>
             <ThumbnailContainer>
               <ThumbnailWrapper>
@@ -25,7 +28,10 @@ function PostCard({ frontMatter }: PostCardProps) {
               </ThumbnailWrapper>
             </ThumbnailContainer>
             <Content>
-              <Tag>{frontMatter.tag}</Tag>
+              <Tag>
+                {frontMatter.tag}
+                {frontMatter.platform && <PlatformTag>{`${frontMatter.platform}`}</PlatformTag>}
+              </Tag>
               <Title>{frontMatter.title}</Title>
               <Excerpt>{frontMatter.excerpt}</Excerpt>
             </Content>
@@ -124,6 +130,14 @@ const Excerpt = styled.p`
   ${media.lessThan('medium')} {
     -webkit-line-clamp: 3;
   }
+`;
+
+const PlatformTag = styled.span`
+  display: inline-block;
+  background-color: rgba(110, 87, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin: 0 0 0 8px;
 `;
 
 export default PostCard;

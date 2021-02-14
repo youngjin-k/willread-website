@@ -2,9 +2,8 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 import React from 'react';
 
-import Layout from '../../components/Layout';
-import PostTemplate from '../../components/PostTemplate';
-import { getFiles, getPostBySlug, Post } from '../../lib/mdx';
+import PostTemplate from '../../../../components/PostTemplate';
+import { getFiles, getPostBySlug, Post } from '../../../../lib/mdx';
 
 export interface PostPageProps {
   post: Post;
@@ -12,9 +11,9 @@ export interface PostPageProps {
 
 function PostPage({ post }: PostPageProps) {
   return (
-    <Layout>
+    <>
       <NextSeo
-        title={`${post.frontMatter.title} - willread`}
+        title={`${post.frontMatter.title}`}
         description={post.frontMatter.excerpt}
         openGraph={{
           images: [
@@ -22,24 +21,36 @@ function PostPage({ post }: PostPageProps) {
               url: post.frontMatter.image,
             },
           ],
-          title: `${post.frontMatter.title} - willread`,
+          title: `${post.frontMatter.title}`,
           description: post.frontMatter.excerpt,
         }}
       />
-      <PostTemplate post={post} />
-    </Layout>
+      <PostTemplate
+        post={post}
+        webview
+      />
+    </>
   );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const files = getFiles();
-
-  return {
-    paths: files.map((file) => ({
+  const paths = [
+    ...getFiles('ios').map((file) => ({
       params: {
+        platform: 'ios',
         slug: file.replace(/\.md/, ''),
       },
     })),
+    ...getFiles('android').map((file) => ({
+      params: {
+        platform: 'android',
+        slug: file.replace(/\.md/, ''),
+      },
+    })),
+  ];
+
+  return {
+    paths,
     fallback: false,
   };
 };
