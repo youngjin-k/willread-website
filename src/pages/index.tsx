@@ -22,7 +22,7 @@ export default function Home() {
                 <br />
                 윌리드
               </HeroCopy>
-              <SubCopy>곧 만나요.</SubCopy>
+              <StoreButtons />
             </ContentWrapper>
             <ImageWrapper>
               <NotificationImageMobileWrapper>
@@ -116,17 +116,6 @@ const HeroCopy = styled.h1`
   }
 `;
 
-const SubCopy = styled.p`
-  font-size: 32px;
-  color: rgb(221, 217, 243);
-  margin: 32px 0 0 0;
-  font-weight: bold;
-
-  ${media.lessThan('large')} {
-    display: none;
-  }
-`;
-
 const ImageWrapper = styled.div`
   margin: 48px 64px 0 0;
   position: relative;
@@ -172,5 +161,67 @@ const IphoneImageWrapper = styled.div`
 
   ${media.lessThan('large')} {
     margin: 0 0 40px 0;
+  }
+`;
+
+const StoreButtons = () => (
+  <StoreButtonsBlock>
+    <StoreButton href="https://play.google.com/store/apps/details?id=com.willread">
+      <StoreIcon src="/assets/images/googleplay.png" />
+      Google Play
+    </StoreButton>
+    <StoreButton href="https://apps.apple.com/kr/app/willread-글을-읽는-가장-가벼운-습관/id1551758074">
+      <StoreIcon src="/assets/images/appstore.png" />
+      App Store
+    </StoreButton>
+  </StoreButtonsBlock>
+);
+
+const StoreButtonsBlock = styled.div`
+  margin: 32px 0 0 0;
+
+  ${media.lessThan('large')} {
+    margin: 32px -8px 0 -8px;
+  }
+`;
+
+const StoreButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 18px;
+  height: 50px;
+  padding: 0 20px;
+  background-color: transparent;
+  margin: 0 16px 0 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  ${media.lessThan('large')} {
+    margin: 0 8px;
+  }
+
+  ${media.lessThan('medium')} {
+    font-size: 16px;
+    height: 44px;
+    padding: 0 12px;
+  }
+`;
+
+const StoreIcon = styled.img`
+  width: 24px;
+  height: 24px;
+  margin: 0 8px 0 0;
+
+  ${media.lessThan('medium')} {
+    width: 20px;
+    height: 20px;
   }
 `;
