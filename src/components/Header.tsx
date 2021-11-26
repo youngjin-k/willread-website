@@ -35,17 +35,28 @@ function Header({ clearMode }: HeaderProps) {
           </LogoLink>
         </NextLink>
 
-        <NextLink
-          href="/blog"
-          passHref
-        >
+        <MenuContainer>
           <BlogLink
             clearMode={clearMode}
-            isActive={isActiveBlog}
+            href="https://github.com/youngjin-k/willread"
+            target="_blank"
+            isActive={false}
           >
-            Blog
+            Github
           </BlogLink>
-        </NextLink>
+
+          <NextLink
+            href="/blog"
+            passHref
+          >
+            <BlogLink
+              clearMode={clearMode}
+              isActive={isActiveBlog}
+            >
+              Blog
+            </BlogLink>
+          </NextLink>
+        </MenuContainer>
       </Container>
     </HeaderBlock>
   );
@@ -87,6 +98,17 @@ const LogoLink = styled.a`
   display: block;
   padding: 0;
   margin: 0;
+`;
+
+const MenuContainer = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  > a + a {
+    margin-left: 8px;
+  }
 `;
 
 const BlogLink = styled.a<{ clearMode: boolean; isActive: boolean }>`
